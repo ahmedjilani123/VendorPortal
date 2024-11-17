@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog title="Are you Sure?">
+        <content>
+            <form:SimpleForm
+            id="SimpleFormChange354"
+            editable="true"
+            layout="ColumnLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="4"
+            columnsL="4"
+            columnsM="1"
+            singleContainerFullSize="false"
+        >
+        <form:content>
+            <Label text="Remark"></Label>
+            <TextArea ></TextArea>
+        </form:content>
+
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button text="Yes" type="Ghost" press="YesMessageActionPress"></Button>
+        </beginButton>
+        <endButton>
+            <Button text="No" press="NoMessageActionPress"></Button>
+        </endButton>
+    </Dialog>
+    
+</core:FragmentDefinition>

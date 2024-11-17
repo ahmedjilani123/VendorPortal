@@ -1,0 +1,19 @@
+<ActionSheet id="actionSheet"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	core:require="{ MessageToast: 'sap/m/MessageToast' }"
+	showCancelButton="true"
+	placement="Bottom">
+	<Button
+		text="Approved"
+		icon="sap-icon://accept"
+		press="ActionPress" fieldGroupIds="A"/>
+	<Button
+		text="Reject"
+		icon="sap-icon://decline"
+		press="ActionPress" fieldGroupIds="X" />
+	<Button
+		text="Re-Route"
+		icon="sap-icon://reset"
+		press="ActionPress" fieldGroupIds="RR" />
+</ActionSheet>

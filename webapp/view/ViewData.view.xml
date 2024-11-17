@@ -1,0 +1,718 @@
+<mvc:View xmlns:tnt="sap.tnt"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    controllerName="sap.aj.vendorpro.controller.ViewData"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Page
+        id="ViewSupplierID"
+        showHeader="false"
+        floatingFooter="true"
+    >
+        <content>
+            <core:Fragment
+                fragmentName="sap.aj.vendorpro.Fragments.ViewShellBar"
+                type="XML"
+            />
+
+            <Panel
+                headerText="General Information" accessibleRole="Region" fieldGroupIds="General"
+                expand="true"
+                expandable="true"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                expanded="{getRole>/General}"
+            
+            >
+            <headerToolbar >
+                <OverflowToolbar>
+                    <Title text="General Information"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralValue'}"></RadioButton> -->
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralStatus'}"></tnt:InfoLabel>
+                
+                    </FlexBox>
+                   </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChange354"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <Label text="Supplier" />
+                            <Input editable="false"
+                                value="{ProcureDatas>Supplier_ID}"
+                                
+                            />
+                            <Label text="First Name" />
+                            <Input editable="false" value="{ProcureDatas>First_Name}" />
+                                
+                            <Label text="Last Name" />
+                            <Input editable="false" value="{ProcureDatas>Last_Name}" />
+                            <Label text="Search Term 1" />
+                            <Input editable="false" value="{ProcureDatas>Search_Term_1}" />
+                            <Label text="Search Term 2" />
+                            <Input editable="false" value="{ProcureDatas>Search_Term_2}" />
+
+                            <Label text="Email" />
+                            <Input editable="false" value="{ProcureDatas>Email}" />
+                            <Label text="Phone No" />
+                            <Input editable="false" value="{ProcureDatas>Phone_No}" />
+                            <Label text="House No" />
+                            <Input editable="false" value="{ProcureDatas>House_No}" />
+                            <Label text="Street" />
+                            <Input editable="false" value="{ProcureDatas>Street}" />
+                            <Label text="Country" />
+                            <Input editable="false"
+                                value="{ProcureDatas>Country}"
+                                showValueHelp="true"
+                                valueHelpRequest="OpenInputFieldPress"
+                                id="CountryId"
+                            />
+                            <Label text="Region" />
+                            <Input editable="false"
+                                showValueHelp="true"
+                                value="{ProcureDatas>Region}"
+                                valueHelpRequest="OpenInputFieldPress"
+                                id="StateId"
+                            />
+                            <Label text="City" />
+                            <Input editable="false"
+                                showValueHelp="true"
+                                valueHelpRequest="OpenInputFieldPress"
+                                value="{ProcureDatas>City}"
+                                id="CityId"
+                            />
+
+                            <Label text="Time zone" />
+                            <Input editable="false" value="{ProcureDatas>Time_Zone}" />
+                            <Label text="PO Box" />
+                            <Input editable="false" value="{ProcureDatas>PO_Box}" />
+                            <Label text="Postal Code" />
+                            <Input editable="false" value="{ProcureDatas>Postal_Code}" />
+
+                            <Label text="Company Postal Code" />
+                            <Input editable="false" value="{ProcureDatas>Company_Postal_Code}" />
+                            <Label text="Language" />
+                            <Input editable="false" value="{ProcureDatas>Language}" />
+                            <Label text="Telephone" />
+                            <Input editable="false" value="{ProcureDatas>Telephone}" />
+                            <Label text="Extension" />
+                            <Input editable="false" value="{ProcureDatas>T_Extension}" />
+                            <Label text="Fax" />
+                            <Input editable="false" value="{ProcureDatas>Fax}" />
+                            <Label text="Extension" />
+                            <Input editable="false" value="{ProcureDatas>F_Extension}" />
+
+                            <Label text="Address Valid Form" />
+                            <DatePicker editable="false"  
+                                value="{ProcureDatas>Address_valid_from}"
+                            />
+                            <Label text="Address Valid To" />
+                            <DatePicker editable="false"  
+                                value="{ProcureDatas>Address_valid_To}"
+                            />
+                            <Label text="External Address No" />
+                            <Input editable="false" value="{ProcureDatas>External_Address_No}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <!-- <Panel
+                headerText="Address Overview"
+                expand="true"
+                expandable="true"
+                class="sapUiResponsiveMargin"
+                width="auto"
+            >
+          
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChange356"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <Label text="Address Description" />
+                            <TextArea />
+                            <Label text="Country" />
+                            <Input editable="false" />
+                            <Label text="Valid From" />
+                            <DatePicker editable="false"   />
+                            <Label text="Valid To" />
+                            <DatePicker editable="false"   />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel> -->
+            <Panel
+                headerText="Identification"
+                expand="true"
+                expandable="true" expanded="{getRole>/General}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="General"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Identification"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralValue'}"></RadioButton> -->
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.GeneralStatus'}"></tnt:InfoLabel>
+                
+                        <!-- <tnt:InfoLabel visible="{path:'RoleMessageForPanel>mainStatus ',formatter:'.GeneralVisible'}" text="{path:'RoleMessageForPanel>mainStatus',formatter:'.GeneraslValue'}" colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.StatusPanel'}"></tnt:InfoLabel> -->
+                    </FlexBox>
+               
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChangeoji"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Organization Data" />
+                            <Label text="Legal Form" />
+    
+                            <Input editable="false" visible="true" value="{ProcureDatas>Legal_Form}"></Input>
+                          
+                            <Label text="Legal Entry" />
+                            <Input editable="false"  value="{ProcureDatas>Legal_Entity}"/>
+                            <Label text="Date Founded" />
+                            <DatePicker editable="false" value="{ProcureDatas>Date_Founded}" />
+                            <Label text="Liquidation date" />
+                            <DatePicker editable="false" value="{ProcureDatas>Liquidation_Date}"/>
+                            <Label text="Int. location no. 1" />
+                            <Input editable="false"  value="{ProcureDatas>Location_No_1}"/>
+                            <Label text="Int. location no. 2" />
+                            <Input editable="false" value="{ProcureDatas>Location_No_2}"/>
+                            <Label text="Check Digit" />
+                            <Input editable="false" value="{ProcureDatas>CheckDigit}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                    <f:SimpleForm
+                        id="SimpleFormChangesdfljf"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Industries" />
+                            <Label text="Industries" />
+                            <Input editable="false" value="{ProcureDatas>Industries}" />
+                            <Label text="Description" />
+                            <Input editable="false" value="{ProcureDatas>Ind_Description}"/>
+                            <Label text="Stnd Industries" />
+                            <CheckBox editable="false" text="stnd Industries" selected="{ProcureDatas>Stnd_Industries}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                    <f:SimpleForm
+                        id="SimpleFormChangesdff"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Indentification Number" />
+                            <Label text="ID Type" />
+                            <Input editable="false" value="{ProcureDatas>Id_Type}" />
+                            <Label text="Description" />
+                            <Input editable="false" value="{ProcureDatas>IN_Description}"/>
+                            <Label text="Identification Number"></Label>
+                            <Input editable="false" value="{ProcureDatas>Identification_Number}"></Input>
+                            <Label text="Responsible Institution" />
+                            <Input editable="false" value="{ProcureDatas>Responsible_Institution}" />
+                            <Label text="Entry Date" />
+                            <DatePicker editable="false"  value="{ProcureDatas>Entry_Date}" />
+                            <Label text="Valid Form" />
+                            <DatePicker editable="false" value="{ProcureDatas>identification_Valid_From}"  />
+                            <Label text="Valid To" />
+                            <DatePicker editable="false"  value="{ProcureDatas>identification_Valid_To}"  />
+                            <Label text="C/R" />
+                            <Input editable="false" value="{ProcureDatas>Identifi_CR}" />
+                            <Label text="Region" />
+                            <Input editable="false" value="{ProcureDatas>Region}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                    <f:SimpleForm
+                        id="SimpleFormChangsdf"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Tax Number" />
+                            <Label text="Category" />
+                            <Input editable="false"  value="{ProcureDatas>Category}"/>
+                            <Label text="Name" />
+                            <Input editable="false" value="{ProcureDatas>Name}" />
+                            <Label text="Text Number Log" />
+                            <Input editable="false"  value="{ProcureDatas>Text_Number_Long}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <Panel
+                headerText="Control"
+                expand="true"
+                expandable="true" expanded="{getRole>/Technical}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="Technical"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Control"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}"></RadioButton> -->
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalStatus'}"></tnt:InfoLabel>
+                
+                    </FlexBox>
+                  <!-- <tnt:InfoLabel text="Legal Department Approved" colorScheme="6"></tnt:InfoLabel> -->
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChange9087"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Control Parameter" />
+                            <Label text="BP Type" />
+                            <Input editable="false" value="{ProcureDatas>Con_Bp_Type}"></Input>
+                            <Label text="Print Format" />
+                            <Input editable="false"  value="{ProcureDatas>Con_Print_Format}"/>
+                            <Label text="Authorization Group" />
+                            <Input editable="false" value="{ProcureDatas>Con_Auth_Group}"></Input>
+                            <Label text="Data Origin" />
+                            <Input editable="false" value="{ProcureDatas>Con_Data_Origin}" />
+                        </f:content>
+                    </f:SimpleForm>
+                    <f:SimpleForm
+                        id="SimpleFormChange5467"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Notes" />
+                            <Label text="EN Correspondence" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_Corresp}"/>
+                            <Label text="EN Accounting Note" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_Acc_Note}"/>
+                            <Label text="EN Marketing Note" />
+                            <Input editable="false"  value="{ProcureDatas>Not_Es_Mark_Note}"/>
+                            <Label text="EN Business Hours" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_Bus_Hs}" />
+                            <Label text="EN Note Log" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_N_Log}" />
+                            <Label text="EN IPM Test" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_Ipm_T}"/>
+                            <Label text="EN Name of Business" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_N_Of_Bus}" />
+                            <Label text="EN Outbound Packing" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_OutB_Pack}"></Input>
+                            <Label text="EN Credit Management" />
+                            <Input editable="false" value="{ProcureDatas>Not_Es_C_Manage}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <Panel
+                headerText="Payment Transaction"
+                expand="true"
+                expandable="true" expanded="{getRole>/Payment}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="Payment"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Payment Transaction"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceStatus'}"></tnt:InfoLabel>
+                
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceValue'}"></RadioButton> -->
+                    </FlexBox>
+                  <!-- <tnt:InfoLabel text="Finance Approved" colorScheme="6"></tnt:InfoLabel> -->
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChangead"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Bank Details" />
+                            <Label text="ID" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Id}" />
+                            <Label text="Bank Account" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Bank_Acc}" />
+                            <Label text="Control Key" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Con_Key}" />
+                                <Label  text="Bank Key"></Label>
+                                <Input editable="false" value="{ProcureDatas>Pay_Bank_key}" />   
+                            <Label text="IBAN" />
+                            <Input editable="false" value="{ProcureDatas>Pay_IBAN}" />
+                            <Label text="Alias" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Alias}" />
+                            <Label text="Bank Account Alias" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Bank_Acc_Al}" />
+                            <Label text="Reference Details" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Ref_D}" />
+                            <Label text="Ext ID" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Ext_ID}" />
+                            <Label text="Collection Auth" />
+                            <CheckBox editable="false" text="Collection Auth" selected="{ProcureDatas>Pay_Coll_Auth}"/>
+                            <Label text="Account Holder" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Acc_Hd}" />
+                            <Label text="Account Name" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Acc_Name}" />
+                            <Label text="Valid From" />
+                            <DatePicker editable="false" value="{ProcureDatas>Pay_B_V_From}" />
+                            <Label text="Valid To" />
+                            <DatePicker editable="false" value="{ProcureDatas>Pay_B_V_To}" />
+                            <Label text="Change On" />
+                            <DatePicker editable="false" value="{ProcureDatas>Pay_Change_On}" />
+                            <Label text="Targ" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Targ}" />
+                            <Label text="Name of financial Institution" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Fin_Ins}" />
+                        </f:content>
+                    </f:SimpleForm>
+                    <f:SimpleForm
+                        id="SimpleFormChangead657"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Payment Cards" />
+                            <Label text="ID" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Card_ID}" />
+                            <Label text="Type" />
+                            <Input editable="false" value="{ProcureDatas>Pay_C_Type}" />
+                            <Label text="Card Number" />
+                            <Input editable="false" value="{ProcureDatas>Pay_Card_Num}" />
+                            <Label text="Standard" />
+                            <CheckBox editable="false" text="Standard"  selected="{ProcureDatas>Pay_Check_STD}"/>
+                            <Label text="Description" />
+                            <Input editable="false"  value="{ProcureDatas>Pay_Card_Des}" />
+                            <Label text="Collection-Auth" />
+                            <CheckBox editable="false" text="Collection-Auth" selected="{ProcureDatas>Pay_Card_Coll_Auth}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <Panel
+                headerText="Status"
+                expand="true"
+                expandable="true" expanded="{getRole>/Payment}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="Payment"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Status"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceStatus'}"></tnt:InfoLabel>
+                
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.FinanceValue'}"></RadioButton> -->
+                    </FlexBox>
+                  <!-- <tnt:InfoLabel text="Finance Approved" colorScheme="6"></tnt:InfoLabel> -->
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChangead689"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Archiving Flags" />
+                            <CheckBox editable="false" text="Archiving Flag" selected="{ProcureDatas>Sts_Arch_F}"/>
+                            <core:Title text="Lock" />
+                            <CheckBox editable="false" text="Central Block" selected="{ProcureDatas>Sts_Cen_Bloc}"/>
+                            <CheckBox editable="false" text="Not released" selected="{ProcureDatas>Sts_Not_Rele}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <Panel
+                headerText="Additional Texts"
+                expand="true"
+                expandable="true" expanded="{getRole>/Technical}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="Technical"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Additional Texts"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalStatus'}"></tnt:InfoLabel>
+                
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}"></RadioButton> -->
+                    </FlexBox>
+                  <!-- <tnt:InfoLabel text="Legal Department Approved" colorScheme="6"></tnt:InfoLabel> -->
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChangeadAdditional"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="4"
+                        columnsL="4"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <core:Title text="Texts" />
+                            <Label text="Text Types" />
+                            <Input editable="false" value="{ProcureDatas>Add_Txt_Type}" />
+                            <Label text="Language" />
+                            <Input editable="false" value="{ProcureDatas>Add_Lang}" />
+                            <Label text="Text Lines" />
+                            <Input editable="false" value="{ProcureDatas>Add_Txt_Line}" />
+                            <Label text="Text Columns" />
+                            <Input editable="false" value="{ProcureDatas>Add_Txt_Col}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+            <Panel
+                headerText="Technical Identification"
+                expand="true"
+                expandable="true" expanded="{getRole>/Technical}"
+                class="sapUiResponsiveMargin"
+                width="auto" fieldGroupIds="Technical"
+            >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Technical Identification"/>
+                    <ToolbarSpacer />
+                    <FlexBox items="{RoleMessageForPanel>/}" alignContent="Center">
+                        <!-- <RadioButton selected="true" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  valueState="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}"></RadioButton> -->
+                   
+                        <tnt:InfoLabel text="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalValue'}" visible="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalVisible'}"  colorScheme="{path:'RoleMessageForPanel>mainStatus',formatter:'.formatter.LegalStatus'}"></tnt:InfoLabel>
+                    </FlexBox>
+                </OverflowToolbar>
+            </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        id="SimpleFormChangeadTechnical"
+                        editable="true"
+                        layout="ColumnLayout"
+                        labelSpanXL="12"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="3"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                        class="sapUiLargeMarginBottom"
+                    >
+                        <f:content>
+                            <Label text="ID Type" />
+                            <Input editable="false" value="{ProcureDatas>Tech_ID_Type}" />
+                            <Label text="Description" />
+                            <Input editable="false" value="{ProcureDatas>Tech_Des}" />
+
+                            <Label text="Technical Identification Number" />
+                            <Input editable="false" value="{ProcureDatas>Tech_Iden_Num}" />
+                            <Label text="responsible Institution" />
+                            <Input editable="false" value="{ProcureDatas>Tech_Res_Inst}" />
+
+                            <Label text="Entry Date" />
+                            <DatePicker editable="false" value="{ProcureDatas>Tech_ETR_Date}"   />
+                            <Label text="Valid From" />
+                            <DatePicker editable="false"  value="{ProcureDatas>Tech_Valid_From}" />
+
+                            <Label text="Valid To" />
+                            <DatePicker editable="false" value="{ProcureDatas>Tech_Valid_To}"   />
+                            <Label text="C/R" />
+                            <Input editable="false" value="{ProcureDatas>Tech_CR}" />
+
+                            <Label text="Region" />
+                            <Input editable="false" value="{ProcureDatas>Tech_RGN}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+        </content>
+        <footer>
+            <Bar id="Footer">
+                <contentLeft>
+                    <Button text="Cancel"   press="EditableCanPress" />
+                </contentLeft>
+                <contentRight>
+                    <Button text="Edit" enabled="true"  press="EditablePress" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

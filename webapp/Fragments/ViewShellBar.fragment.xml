@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+    <f:ShellBar class="ViewShellBar" title="View Vendor Details" homeIcon="../Images/logo.png" showNavButton="true" navButtonPressed="NavToHomePress" showCopilot="false" homeIconPressed="fnOpen"  showProductSwitcher="false">
+        <f:additionalContent>
+               <Button
+               text="Action"
+               type="Default"
+               press="onButtonActionSheetPress"
+               ariaHasPopup="Menu" >
+               <dependents>
+                   <core:Fragment
+                       fragmentName="sap.aj.vendorpro.Dialogs.ActionSheet"
+                       type="XML" />
+               </dependents>
+           </Button>
+        </f:additionalContent>
+    </f:ShellBar>
+</core:FragmentDefinition>

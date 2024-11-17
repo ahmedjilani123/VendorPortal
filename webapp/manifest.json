@@ -1,0 +1,164 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "sap.aj.vendorpro",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.5",
+      "toolsId": "8b8aa443-b546-4f53-870a-0659176bac0a"
+    },
+    "dataSources": {
+      "ProcureData": {
+        "uri": "./model/column.json",
+        "type": "JSON"
+      },
+      "GeneralData": {
+        "uri": "./model/GeneralData.json",
+        "type": "JSON"
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.124.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.aj.vendorpro.i18n.i18n"
+        }
+      },
+      "ProcureDatas": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "VendorSubmit": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "GeneralDatas": {
+        "dataSource": "GeneralData",
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "StateDatas": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "CityDatas": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "CSCData": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "RoleBaseEdit": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "RoleBase": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "getRole": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "RoleMessageForPanel": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "sap.aj.vendorpro.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteVendorFirst",
+          "pattern": ":?query:",
+          "target": [
+            "TargetVendorFirst"
+          ]
+        },
+        {
+          "name": "ViewDataSupplier",
+          "pattern": "ViewData/{SupplierID}",
+          "target": [
+            "TargetVendorSecond"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetVendorFirst": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "VendorFirst",
+          "viewName": "VendorFirst"
+        },
+        "TargetVendorSecond": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ViewData",
+          "viewName": "ViewData"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.aj.vendorpro.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapajvendorpro"
+  }
+}

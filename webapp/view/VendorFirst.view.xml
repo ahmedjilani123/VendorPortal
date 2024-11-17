@@ -1,0 +1,214 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    xmlns:tnt="sap.tnt"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:f="sap.f"
+    controllerName="sap.aj.vendorpro.controller.VendorFirst"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <core:Fragment
+        fragmentName="sap.aj.vendorpro.Fragments.Shellbar"
+        type="XML"
+    />
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <content>
+            <f:DynamicPage headerExpanded="true" headerPinned="false"  >
+                <f:header>
+                    <f:DynamicPageHeader  >
+                        <f:content>
+                            <filterbar:FilterBar
+                                id="filterbar"
+                                persistencyKey="myPersKey"
+                                useToolbar="false"
+                                showGoOnFB="true"
+                                showClearOnFB="true"
+                                clear="onClearSearchPress"
+                                showFilterConfiguration="false"
+                                search="onSearchPress"
+                            >
+                                <filterbar:filterGroupItems>
+                                    <filterbar:FilterGroupItem
+                                        name="Supplier_ID"
+                                        label="Supplier"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox id="multicomboID"
+                                                selectionChange="ItemSelectionPress" 
+                                                items="{
+                                                    path:'ProcureDatas>/columns'}"
+                                                   
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>Supplier_ID}"
+                                                    text="{ProcureDatas>Supplier_ID}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                    <filterbar:FilterGroupItem
+                                        name="First_Name"
+                                        label="Name"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox 
+                                                selectionChange="ItemSelectionPress"
+                                                items="{ProcureDatas>/columns}"
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>First_Name}"
+                                                    text="{ProcureDatas>First_Name}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                    <filterbar:FilterGroupItem
+                                        name="Country"
+                                        label="Account Group"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox
+                                                selectionChange="ItemSelectionPress"
+                                                items="{ProcureDatas>/columns}"
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>Country}"
+                                                    text="{ProcureDatas>Country}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                    <filterbar:FilterGroupItem
+                                        name="City"
+                                        label="City"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox
+                                                selectionChange="ItemSelectionPress"
+                                                items="{ProcureDatas>/columns}"
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>City}"
+                                                    text="{ProcureDatas>City}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                    <filterbar:FilterGroupItem
+                                        name="Region"
+                                        label="Region"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox
+                                                selectionChange="ItemSelectionPress"
+                                                items="{ProcureDatas>/columns}"
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>Region}"
+                                                    text="{ProcureDatas>Region}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                    <filterbar:FilterGroupItem
+                                        name="Status"
+                                        label="Status"
+                                        groupName="Group1"
+                                        visibleInFilterBar="true"
+                                    >
+                                        <filterbar:control>
+                                            <MultiComboBox
+                                                selectionChange="ItemSelectionPress"
+                                                items="{ProcureDatas>/columns}"
+                                            >
+                                                <core:Item
+                                                    key="{ProcureDatas>Status}"
+                                                    text="{ProcureDatas>Status}"
+                                                />
+                                            </MultiComboBox>
+                                        </filterbar:control>
+                                    </filterbar:FilterGroupItem>
+                                </filterbar:filterGroupItems>
+                            </filterbar:FilterBar>
+                        </f:content>
+                    </f:DynamicPageHeader>
+                </f:header>
+                <f:content>
+                    <table:Table
+                        rows="{ProcureDatas>/columns}"
+                        id="UiTable"
+                        rowSelectionChange="RowSelectionChangePress"
+                        selectionMode="None"
+                        alternateRowColors="true"
+                    >
+                        <table:rowSettingsTemplate>
+                            <table:RowSettings navigated="true" highlight="{path:'ProcureDatas>Status',formatter:'.Status'}"/>
+                        </table:rowSettingsTemplate>
+                        <table:columns>
+                            <table:Column hAlign="Center">
+                                <Label text="Supplier and Name" />
+                                <table:template>
+                                    <!-- <HBox justifyContent="SpaceBetween">
+                                        <Text text="{ProcureDatas>Supplier_ID}" />
+                                        <Text text="{ProcureDatas>First_Name}" />
+                                    </HBox> -->
+                                    <ObjectIdentifier title="{ProcureDatas>Supplier_ID}" text="{ProcureDatas>First_Name}"/>
+                                </table:template>
+                            </table:Column>
+                            <table:Column hAlign="Center">
+                                <Label text="Country" />
+                                <table:template>
+                                    <Text text="{ProcureDatas>Country}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column hAlign="Center">
+                                <Label text="City" />
+                                <table:template>
+                                    <Text text="{ProcureDatas>City}" />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column hAlign="Center">
+                                <Label text="Region " />
+                                <table:template>
+                                    <Text
+                                        text="{ProcureDatas>Region}"
+                                    />
+                                </table:template>
+                            </table:Column>
+
+                            <table:Column hAlign="Center">
+                                <Label text="Status" />
+                                <table:template>
+                                    <!-- <tnt:InfoLabel  text="{ProcureDatas>Status}" renderMode="Loose" colorScheme="{path:'ProcureDatas>Status',formatter:'.Status'}"/> -->
+                                    <ObjectStatus
+                                        text="{path:'ProcureDatas>Status',formatter:'.Value'}"
+                                        state="{path:'ProcureDatas>Status',formatter:'.Status'}"
+                                    />
+                                </table:template>
+                            </table:Column>
+                        </table:columns>
+                    </table:Table>
+                </f:content>
+            </f:DynamicPage>
+          
+        </content>
+    </Page>
+</mvc:View>

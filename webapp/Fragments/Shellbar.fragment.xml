@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+    <f:ShellBar title="Procurement" homeIcon="../Images/logo.png" showCopilot="false" homeIconPressed="fnOpen"  showProductSwitcher="false">
+        <f:additionalContent>
+            <Button visible="true" type="Ghost" text="Create" id="dashid" icon="sap-icon://create-session" press="onCreateVendorDialogPress" />
+        </f:additionalContent>
+    </f:ShellBar>
+</core:FragmentDefinition>
